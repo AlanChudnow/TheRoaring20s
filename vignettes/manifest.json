@@ -33,5 +33,64 @@
         "images/poland_1_pic3.jpg"
       ]
     }
+  ],
+  "argentina": [
+    {
+      "title": "Buenos Aires — Where Tango Begins, and the Women Decide Everything",
+      "text": "vignettes/argentina_1_text.html",
+      "pics": [
+        "images/argentina_1_pic1.jpg",
+        "images/argentina_1_pic2.jpg",
+        "images/argentina_1_pic3.jpg",
+        "images/argentina_1_pic4.jpg",
+        "images/argentina_1_pic5.jpg",
+        "images/argentina_1_pic6.jpg"
+      ]
+    }
+  ],
+  "britain": [
+    {
+      "title": "London, 1926 — Bertie Wooster Attempts the Charleston",
+      "text": "vignettes/britain_1_text.html",
+      "pics": [
+        "images/britain_1_pic1.jpg",
+        "images/britain_1_pic2.jpg",
+        "images/britain_1_pic3.jpg",
+        "images/britain_1_pic4.jpg",
+        "images/britain_1_pic5.jpg",
+        "images/britain_1_pic6.jpg",
+        "images/britain_1_pic7.jpg",
+        "images/britain_1_pic8.jpg",
+        "images/britain_1_pic9.jpg",
+        "images/britain_1_pic10.jpg",
+        "images/britain_1_pic11.jpg",
+        "images/britain_1_pic12.jpg",
+        "images/britain_1_pic13.jpg"
+      ]
+    }
+  ],
+  "germany": [
+    {
+      "title": "Berlin, 1928 — An Englishman Learns a Word He Didn't Know He Was Missing",
+      "text": "vignettes/germany_2_text.html",
+      "pics": [
+        "images/germany_2_pic1.jpg",
+        "images/germany_2_pic2.jpg",
+        "images/germany_2_pic3.jpg",
+        "images/germany_2_pic4.jpg",
+        "images/germany_2_pic5.jpg",
+        "images/germany_2_pic6.jpg",
+        "images/germany_2_pic7.jpg",
+        "images/germany_2_pic8.jpg",
+        "images/germany_2_pic9.jpg",
+        "images/germany_2_pic10.jpg",
+        "images/germany_2_pic11.jpg",
+        "images/germany_2_pic12.jpg",
+        "images/germany_2_pic13.jpg",
+        "images/germany_2_pic14.jpg",
+        "images/germany_2_pic15.jpg",
+        "images/germany_2_pic16.jpg"
+      ]
+    }
   ]
 }
