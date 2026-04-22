@@ -1,0 +1,37 @@
+{
+  "us": [
+    {
+      "title": "Harlem Rent Party — Josephine Before Paris",
+      "text": "vignettes/us_1_text.html",
+      "pics": [
+        "images/us_1_pic1.jpg",
+        "images/us_1_pic2.jpg",
+        "images/us_1_pic3.jpg",
+        "images/us_1_pic4.jpg",
+        "images/us_1_pic5.jpg",
+        "images/us_1_pic6.jpg",
+        "images/us_1_pic7.jpg"
+      ]
+    },
+    {
+      "title": "Tin Pan Alley — Late Afternoon Turning to Night",
+      "text": "vignettes/us_2_text.html",
+      "pics": [
+        "images/us_2_pic1.jpg",
+        "images/us_2_pic2.jpg",
+        "images/us_2_pic3.jpg"
+      ]
+    }
+  ],
+  "poland": [
+    {
+      "title": "Eastern Poland, 1920 — The Klezmer Clarinet Player Arrives",
+      "text": "vignettes/poland_1_text.html",
+      "pics": [
+        "images/poland_1_pic1.jpg",
+        "images/poland_1_pic2.jpg",
+        "images/poland_1_pic3.jpg"
+      ]
+    }
+  ]
+}

@@ -107,6 +107,25 @@ a:hover{text-decoration:underline}
 /* Divider */
 .divider{height:1px;background:var(--bd);margin:26px 0}
 
+/* ── Vignettes ───────────────────────────────────────── */
+#c-vignettes{margin-top:28px}
+.vignette{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--bd)}
+.vignette:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.vignette-title{font-size:13px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.vignette-images{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.vignette-images img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;border:1px solid var(--bd);background:var(--bg3);cursor:zoom-in;transition:opacity .15s}
+.vignette-images img:hover{opacity:.85}
+.vignette-text{font-size:15px;line-height:1.78;color:var(--t2);max-width:680px}
+.vignette-text p{margin-bottom:12px}
+.vignette-text p:last-child{margin-bottom:0}
+.vignette-loading{color:var(--t3);font-size:13px;padding:12px 0}
+@media(max-width:600px){.vignette-images{grid-template-columns:repeat(2,1fr)}}
+
+/* Lightbox */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
+
 /* ── Spotify SVG icon ────────────────────────────────── */
 .sp-ico{display:inline-block;width:14px;height:14px;fill:#fff;vertical-align:middle;flex-shrink:0}
 
@@ -177,7 +196,11 @@ a:hover{text-decoration:underline}
     <div class="leg-item"><div class="leg-dot" style="background:var(--bl-f);border:1px solid var(--bl-s)"></div>Colonial / imported</div>
     <div class="leg-item"><div class="leg-dot" style="background:var(--pi-f);border:1px solid var(--pi-s)"></div>Hybrid / fusion</div>
   </div>
+  <div id="c-vignette-divider" class="divider" style="display:none"></div>
+  <div id="c-vignettes"></div>
 </main>
+
+<div id="lightbox" onclick="this.classList.remove('open')"><img id="lightbox-img" src="" alt=""></div>
 
 <script>
 const REGIONS=[
@@ -492,6 +515,60 @@ REGIONS.forEach(({g,countries})=>{
   browseEl.appendChild(regionDiv);
 });
 
+// ── Vignette loader ──────────────────────────────────────────────────────────
+let vigManifest=null;
+
+async function initManifest(){
+  try{
+    const r=await fetch('vignettes/manifest.json');
+    if(r.ok) vigManifest=await r.json();
+    else vigManifest={};
+  }catch(e){ vigManifest={}; }
+}
+
+async function fetchText(url){
+  try{ const r=await fetch(url); return r.ok?await r.text():null; }
+  catch(e){ return null; }
+}
+
+function buildPics(pics){
+  if(!pics||!pics.length) return '';
+  const imgs=pics.map(src=>`<img src="${src}" alt="" loading="lazy">`).join('');
+  return `<div class="vignette-images">${imgs}</div>`;
+}
+
+async function loadVignettes(k){
+  const el=document.getElementById('c-vignettes');
+  const divider=document.getElementById('c-vignette-divider');
+  const entries=vigManifest&&vigManifest[k];
+  if(!entries||!entries.length){ el.innerHTML=''; divider.style.display='none'; return; }
+  el.innerHTML='<p class="vignette-loading">Loading…</p>';
+  const blocks=[];
+  for(const entry of entries){
+    const {title='',text:textUrl='',pics=[]}=entry;
+    const text=textUrl?await fetchText(textUrl):null;
+    if(!pics.length&&!text) continue;
+    let html=`<div class="vignette">`;
+    if(title) html+=`<div class="vignette-title">${title}</div>`;
+    html+=buildPics(pics);
+    if(text)  html+=text;
+    html+=`</div>`;
+    blocks.push(html);
+  }
+  if(blocks.length){
+    el.innerHTML=blocks.join('\n');
+    divider.style.display='';
+    el.querySelectorAll('.vignette-images img').forEach(img=>{
+      img.onclick=()=>{
+        document.getElementById('lightbox-img').src=img.src;
+        document.getElementById('lightbox').classList.add('open');
+      };
+    });
+  }else{
+    el.innerHTML=''; divider.style.display='none';
+  }
+}
+
 function showIntro(){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('nav').style.display='none';
@@ -521,6 +598,7 @@ function show(k){
     btnsEl.appendChild(a);
   });
   renderDiag(k);
+  loadVignettes(k);
   const hasDiag=d.r&&d.r.length>0;
   document.querySelector('.divider').style.display=hasDiag?'':'none';
   document.querySelector('.diagram-title').style.display=hasDiag?'':'none';
@@ -528,6 +606,8 @@ function show(k){
   document.querySelector('.legend').style.display=hasDiag?'':'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+initManifest();
 </script>
 </body>
 </html>

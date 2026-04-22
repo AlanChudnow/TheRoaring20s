@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"../TheRoaring20s - New Material.docx\" content.docx)",
+      "Bash(unzip -o content.docx -d unpacked)",
+      "Bash(C:\\\\Users\\\\Daddy\\\\Anaconda3\\\\python.exe:*)"
+    ]
+  }
+}

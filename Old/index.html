@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Roaring 20s: World Music</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#ffffff;--bg2:#f5f4f0;--bg3:#eceae3;
+--t1:#1a1a18;--t2:#4a4a46;--t3:#7a7a74;
+--bd:#e0ddd4;--bd2:#c8c5bc;
+--accent:#1DB954;--accent-t:#0d8c3a;
+--co-f:#FAECE7;--co-k:#993C1D;--co-t:#4A1B0C;--co-s:#D85A30;
+--te-f:#E1F5EE;--te-k:#0F6E56;--te-t:#04342C;--te-s:#1D9E75;
+--pu-f:#EEEDFE;--pu-k:#534AB7;--pu-t:#26215C;--pu-s:#7F77DD;
+--am-f:#FAEEDA;--am-k:#854F0B;--am-t:#412402;--am-s:#BA7517;
+--bl-f:#E6F1FB;--bl-k:#185FA5;--bl-t:#042C53;--bl-s:#378ADD;
+--pi-f:#FBEAF0;--pi-k:#993556;--pi-t:#4B1528;--pi-s:#D4537E;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#18181a;--bg2:#222226;--bg3:#2a2a30;
+--t1:#e8e6df;--t2:#a8a69e;--t3:#68666e;
+--bd:#3a3a40;--bd2:#4a4a52;
+--co-f:#3a1408;--co-k:#F0997B;--co-t:#F5C4B3;--co-s:#F0997B;
+--te-f:#062b1e;--te-k:#5DCAA5;--te-t:#9FE1CB;--te-s:#5DCAA5;
+--pu-f:#1e1c42;--pu-k:#AFA9EC;--pu-t:#CECBF6;--pu-s:#AFA9EC;
+--am-f:#2a1a04;--am-k:#EF9F27;--am-t:#FAC775;--am-s:#EF9F27;
+--bl-f:#051828;--bl-k:#85B7EB;--bl-t:#B5D4F4;--bl-s:#85B7EB;
+--pi-f:#2a0e1c;--pi-k:#ED93B1;--pi-t:#F4C0D1;--pi-s:#ED93B1;
+}}
+
+html,body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--t1);font-size:15px;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── Site header ─────────────────────────────────────── */
+#site-header{padding:28px 24px 0;max-width:860px;margin:0 auto}
+.site-title{font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--t1)}
+.site-title span{font-weight:400;color:var(--t3);font-size:14px;margin-left:8px;letter-spacing:0}
+
+/* ── Intro section ───────────────────────────────────── */
+#intro{max-width:860px;margin:0 auto;padding:24px 24px 0}
+.intro-lede{font-size:18px;line-height:1.65;color:var(--t1);font-weight:500;margin-bottom:20px;letter-spacing:-.01em}
+.intro-body{font-size:15px;line-height:1.8;color:var(--t2);max-width:720px}
+.intro-body p{margin-bottom:14px}
+.intro-body p:last-child{margin-bottom:0}
+.intro-cards{display:flex;flex-direction:column;gap:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--bd)}
+.playlist-card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px 18px}
+.playlist-card-label{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.playlist-card-desc{font-size:13px;color:var(--t2);margin-bottom:12px;line-height:1.5}
+
+/* ── Nav (top horizontal) ────────────────────────────── */
+#nav{background:var(--bg);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;padding:0 24px;display:none}
+.nav-inner{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:0;padding:8px 0}
+.region-group{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:0 0 8px;margin-right:16px}
+.region-group:last-child{margin-right:0}
+.region-label{font-size:9px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-right:6px;white-space:nowrap;align-self:center}
+.nav-world{background:none;border:1px solid var(--accent);border-radius:14px;padding:4px 11px;font-size:12px;color:var(--accent);cursor:pointer;font-family:inherit;white-space:nowrap;font-weight:600;margin-right:10px;align-self:center;transition:background .12s,color .12s}
+.nav-world:hover{background:var(--accent);color:#fff}
+.nav-btn{background:none;border:1px solid var(--bd);border-radius:14px;padding:4px 11px;font-size:12px;color:var(--t2);cursor:pointer;font-family:inherit;white-space:nowrap;transition:color .12s,background .12s,border-color .12s}
+.nav-btn:hover{background:var(--bg3);color:var(--t1);border-color:var(--bd2)}
+.nav-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.nav-home{background:none;border:none;padding:4px 0;font-size:12px;color:var(--t3);cursor:pointer;font-family:inherit;margin-right:12px;align-self:center;text-decoration:underline;text-decoration-color:transparent;transition:color .12s,text-decoration-color .12s}
+.nav-home:hover{color:var(--t1);text-decoration-color:var(--bd2)}
+
+/* ── Main content area ───────────────────────────────── */
+#main{max-width:860px;margin:0 auto;padding:32px 24px 60px;display:none}
+
+/* Country header */
+.country-name{font-size:26px;font-weight:700;color:var(--t1);letter-spacing:-.02em;margin-bottom:12px}
+.spotify-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.spotify-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;border:none;border-radius:20px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity .15s;letter-spacing:.01em}
+.spotify-btn:hover{opacity:.85;text-decoration:none;color:#fff}
+.spotify-btn svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+
+/* Description */
+.desc{margin:22px 0 28px;font-size:15px;line-height:1.78;color:var(--t2);max-width:680px}
+.desc p{margin-bottom:14px}
+.desc p:last-child{margin-bottom:0}
+
+/* Diagram */
+.diagram-title{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+#diag{width:100%;display:block}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;padding-top:14px;border-top:1px solid var(--bd)}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--t3)}
+.leg-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+
+/* Browse section on intro */
+.browse-section{margin-top:32px;padding-top:24px;border-top:1px solid var(--bd)}
+.browse-section-title{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.browse-region{margin-bottom:20px}
+.browse-region-label{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.browse-grid{display:flex;flex-wrap:wrap;gap:8px}
+.browse-btn{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--t1);cursor:pointer;font-family:inherit;text-align:left;transition:background .12s,border-color .12s,color .12s;line-height:1.3}
+.browse-btn:hover{background:var(--bg3);border-color:var(--bd2);color:var(--t1)}
+.browse-btn:active{background:var(--accent);border-color:var(--accent);color:#fff}
+.browse-world{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.browse-world:hover{background:var(--accent-t);border-color:var(--accent-t);color:#fff}
+
+/* Back button */
+.back-btn{background:none;border:none;color:var(--t3);font-size:13px;font-family:inherit;cursor:pointer;padding:0 0 18px;display:flex;align-items:center;gap:4px;transition:color .12s}
+.back-btn:hover{color:var(--accent)}
+
+/* Divider */
+.divider{height:1px;background:var(--bd);margin:26px 0}
+
+/* ── Vignettes ───────────────────────────────────────── */
+#c-vignettes{margin-top:28px}
+.vignette{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--bd)}
+.vignette:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.vignette-title{font-size:13px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.vignette-text{font-size:15px;line-height:1.78;color:var(--t2);max-width:680px;margin-bottom:16px}
+.vignette-text p{margin-bottom:12px}
+.vignette-text p:last-child{margin-bottom:0}
+.vignette-images{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.vignette-images img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:5px;border:1px solid var(--bd);background:var(--bg3);cursor:zoom-in;transition:opacity .15s}
+.vignette-images img:hover{opacity:.85}
+.vignette-loading{color:var(--t3);font-size:13px;padding:12px 0}
+.vignette-coming-soon{color:var(--t3);font-size:14px;font-style:italic;padding:8px 0}
+
+/* Lightbox */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
+
+/* ── Spotify SVG icon ────────────────────────────────── */
+.sp-ico{display:inline-block;width:14px;height:14px;fill:#fff;vertical-align:middle;flex-shrink:0}
+
+@media(max-width:600px){
+  #site-header,#intro,#main{padding-left:16px;padding-right:16px}
+  #nav{padding:0 12px}
+  .nav-inner{gap:0;padding:6px 0 0}
+  .region-group{margin-right:10px;gap:3px;padding-bottom:6px}
+  .region-label{font-size:8px;margin-right:4px}
+  .nav-btn{font-size:11px;padding:3px 9px}
+  .intro-lede{font-size:16px}
+  .country-name{font-size:22px}
+
+}
+</style>
+</head>
+<body>
+
+<div id="site-header">
+  <div class="site-title">The Roaring 20s <span>World Music · 1920–1929</span></div>
+</div>
+
+<section id="intro">
+  <p class="intro-lede">The 1920s were a Cambrian explosion for music — perhaps the most compressed burst of musical creation in all of human history, happening simultaneously on every inhabited continent.</p>
+  <div class="intro-body">
+    <p>Several forces converged at exactly the same moment to make this possible. The phonograph and radio were new enough to be revolutionary but mature enough to reach mass audiences: by 1929 there were 10 million radios in American homes alone, and a single performance could reach millions simultaneously for the first time ever. The music of a Harlem speakeasy, a Buenos Aires milonguero, or a Cairo takht ensemble could now travel across oceans on a shellac disc.</p>
+    <p>The Great War (1914–1918) had shattered the old world and left survivors hungry for release. Prohibition drove American nightlife underground and inadvertently turned jazz into the music of liberation — outlawed alcohol and outlawed joy found each other in the same basement. In Paris, Berlin, and London, artists who had survived the trenches threw themselves into the most radical music imaginable. The Weimar Republic produced Kurt Weill and the Comedian Harmonists; Les Six in Paris dismantled Romanticism with cheerful irreverence; Stravinsky essentially invented neoclassicism in a single ballet season.</p>
+    <p>Mass migration was mixing cultures in ways that had never happened before. The Great Migration brought Black American music northward to Chicago and New York. Argentine tango absorbed the Italian immigrant's bandoneón. Shanghai's cabarets employed Filipino jazz bands and White Russian orchestras. The Ottoman collapse scattered musicians across the Mediterranean. Everywhere, displaced people carried their music into new contexts — and new music grew from the collision.</p>
+    <p>Jazz was the universal solvent. Wherever it landed — Paris, Tokyo, Cairo, Havana, Johannesburg — it reacted with local musical tradition to produce something entirely new: shidaiqu in Shanghai, ryūkōka in Tokyo, rebetiko in Athens, marabi in Johannesburg. The decade ended with the Great Depression slamming the window shut. What happened inside those ten years — 30 countries, 30 flowering music scenes, all at once — was never repeated. Browse below to hear it.</p>
+  </div>
+  <div class="intro-cards">
+    <div class="playlist-card">
+      <div class="playlist-card-label">The grand tour</div>
+      <div class="playlist-card-desc">A curated 2-hour journey through all 30 regions — Armstrong to Umm Kulthum, Gardel to Pixinguinha, Ravel to the Sexteto Habanero.</div>
+      <a class="spotify-btn" href="https://open.spotify.com/playlist/4RIzigoAmOnM0WacXeGhs0" target="_blank">
+        <svg class="sp-ico" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        TheRoaring20s-World
+      </a>
+    </div>
+    <div class="playlist-card">
+      <div class="playlist-card-label">Reimagined</div>
+      <div class="playlist-card-desc">Every classic paired with its electro-swing counterpart — from Cab Calloway to Caravan Palace, Django to Parov Stelar.</div>
+      <a class="spotify-btn" href="https://open.spotify.com/playlist/4sOR9vhv6OAfUGvDRt1Oio" target="_blank">
+        <svg class="sp-ico" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        TheRoaring20s-Reimagined
+      </a>
+    </div>
+  <div id="browse-countries" class="browse-section"></div>
+</section>
+
+<nav id="nav">
+  <div class="nav-inner" id="nav-inner"></div>
+</nav>
+
+<main id="main">
+  <button class="back-btn" onclick="showIntro()">← Introduction</button>
+  <div class="country-name" id="c-name"></div>
+  <div class="spotify-btns" id="c-spotify-btns"></div>
+  <div class="desc" id="c-desc"></div>
+  <div class="divider"></div>
+  <div class="diagram-title">Musical influence flow</div>
+  <svg id="diag" viewBox="0 0 680 300"></svg>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:var(--co-f);border:1px solid var(--co-s)"></div>African / diaspora</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--te-f);border:1px solid var(--te-s)"></div>Folk / indigenous</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--pu-f);border:1px solid var(--pu-s)"></div>Classical / art music</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--am-f);border:1px solid var(--am-s)"></div>Popular / commercial</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--bl-f);border:1px solid var(--bl-s)"></div>Colonial / imported</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--pi-f);border:1px solid var(--pi-s)"></div>Hybrid / fusion</div>
+  </div>
+  <div id="c-vignette-divider" class="divider" style="display:none"></div>
+  <div id="c-vignettes"></div>
+</main>
+
+<div id="lightbox" onclick="this.classList.remove('open')"><img id="lightbox-img" src="" alt=""></div>
+
+<script>
+const REGIONS=[
+{g:'',countries:['world']},
+{g:'Americas',countries:['us','cuba','caribbean','argentina','brazil','mexico','colombia']},
+{g:'Europe West',countries:['france','germany','ballet','britain','ireland','spain','italy','portugal']},
+{g:'Europe East',countries:['russia','hungary','czechia','poland','balkans']},
+{g:'Asia',countries:['japan','china','india','indonesia','philippines','korea']},
+{g:'Africa · Middle East · Oceania',countries:['egypt','africa','middleeast','australia']}
+];
+
+const DATA={
+world:{n:'World',pl:'4RIzigoAmOnM0WacXeGhs0',
+pls:[{id:'4RIzigoAmOnM0WacXeGhs0',label:'TheRoaring20s-World'},{id:'4sOR9vhv6OAfUGvDRt1Oio',label:'TheRoaring20s-Reimagined'}],
+desc:`<p>Two playlists that span the full breadth of the project. The World playlist is a curated two-hour journey through all 30 regions in a single sitting — Armstrong to Umm Kulthum, Gardel to Pixinguinha, Ravel to the Sexteto Habanero — sequenced so each track illuminates the one before it.</p><p>The Reimagined playlist pairs each 1920s original with its electro-swing counterpart, alternating between the source recording and the modern interpretation. Cab Calloway followed by Wolfgang Lohr, Django Reinhardt followed by Parov Stelar, Ben Bernie followed by The Correspondents — the same melodic DNA in two completely different sonic worlds, separated by a century.</p><p>Together they're a complete portrait of the decade: the archive and the afterlife.</p>`,
+r:[],f:[],d:[],a:[]},
+us:{n:'United States',pl:'4TqRai3WMoBHeAqtUAeX8A',pls:[{id:'4TqRai3WMoBHeAqtUAeX8A',label:'TheRoaring20s-US'},{id:'1EmG7atTffed4eHHijIUr0',label:'TheRoaring20s-Harlem'}],
+desc:`<p>After the Great War, America was drunk on prosperity and moral contradiction. Prohibition had made the speakeasy the social center of every city, inadvertently turning jazz into the music of urban liberation — outlawed alcohol and outlawed joy found each other in the same basement.</p><p>The Great Migration was flooding northern cities with Black Southerners who brought blues, gospel, and a rawness that Tin Pan Alley could only imitate. In Harlem, a cultural renaissance was in full bloom: Langston Hughes, Duke Ellington, and Josephine Baker (before Paris claimed her) were rewriting what American culture could be, even as the legal system denied them equal citizenship.</p><p>The phonograph and radio were new technologies that exploded during the decade — by 1929 there were 10 million radios in American homes. For the first time, a single performance could reach millions simultaneously, and the music of Black America could reach white ears with no human intermediary to stop it.</p>`,
+r:[['b','Blues','African American South','co'],['rg','Ragtime','Piano tradition','co'],['t','Tin Pan Alley','Commercial songwriting','am'],['e','European classical','Immigrant composers','pu'],['f','Country & folk','Appalachian roots','te']],
+f:[['j','Jazz','New Orleans to Chicago','co'],['a','American classical','Gershwin, Copland','pu'],['c','Early country','Carter Family, Rodgers','te'],['p','Popular song','Hit songwriting','am']],
+d:[['sw','Big Band / Swing','1930s dance halls','co'],['be','Bebop','1940s modernism','co'],['rb','R&B to Rock & Roll','1950s revolution','co'],['bg','Bluegrass','Bill Monroe era','te'],['bw','Musical theatre','Broadway golden age','am']],
+a:[['b','j'],['rg','j'],['t','j'],['t','p'],['e','a'],['f','c'],['j','sw'],['j','be'],['j','rb'],['c','bg'],['p','bw']]},
+
+france:{n:'France / Paris',pl:'5ZDHKoxDAEU5f6UhyQcWNM',
+desc:`<p>Paris in the 1920s was the world's capital of everything avant-garde — a magnet for exiles, expatriates, and anyone who felt their home country couldn't contain them. Hemingway wrote at café tables, Picasso dismantled form in his studio, and the city was still processing the trauma of the Western Front: four years of trenches less than 100 miles north had killed a generation.</p><p>Jazz arrived with American troops and never left. Josephine Baker's debut at the Théâtre des Champs-Élysées in 1925 was a cultural detonation — French audiences projected onto her everything they found intoxicating and liberating about America, about Africa, about the body itself. She became the most famous woman in France within months.</p><p>The French avant-garde, having survived the war's horror, threw itself into the most radical music imaginable: Les Six (Poulenc, Milhaud, Honegger, Auric, Durey, Tailleferre) were Satie's protégés, deliberately ordinary and irreverent where the Romantics had been pompous. Ravel was pushing harmony to its extreme, polite limit. It was an extraordinarily fertile moment.</p>`,
+r:[['ch','Chanson populaire','Café-concert tradition','am'],['im','Impressionism','Debussy, Ravel','pu'],['ca','Cabaret tradition','Montmartre scene','am'],['uj','American jazz','Transatlantic import','co']],
+f:[['cn','Chansonniers','Pre-Piaf tradition','am'],['fm','French modernism','Ravel, Milhaud, Satie','pu'],['pj','Parisian jazz','Baker, Django','co'],['ls','Les Six','Poulenc, Honegger','pu']],
+d:[['ex','Existentialist chanson','Piaf, Brel 1940s','am'],['mc','Musique concrète','Electronic tradition','pu'],['fp','French pop / yé-yé','1960s generation','am'],['mn','Manouche jazz','Django Reinhardt','co']],
+a:[['ch','cn'],['im','fm'],['ca','cn'],['uj','pj'],['fm','ls'],['cn','ex'],['fm','mc'],['pj','fp'],['pj','mn']]},
+
+germany:{n:'Germany / Weimar',pl:'7CttGaZsHmee6FOV2fcfYi',
+desc:`<p>The Weimar Republic (1919–1933) was a fragile democracy born in military defeat, sustained through hyperinflation, and doomed by what came after. Berlin in the mid-1920s was the most permissive city on earth — cabarets, jazz clubs, early queer culture, Expressionist cinema — because a society that had lost everything had nothing left to fear.</p><p>Kurt Weill and Bertolt Brecht were making musical theatre that was simultaneously cabaret entertainment and political bomb-throwing. The Comedian Harmonists were harmonizing with beautiful precision, their music poised at the exact moment before the catastrophe that would scatter the Jewish members of the group into exile. The Schoenberg school — Berg, Webern — was inventing an entirely new musical language in Vienna while the political world burned.</p><p>The tragedy of Weimar culture is inseparable from its brilliance. It was the last free breath before totalitarianism, and everyone who experienced it seemed to know it. The decade produced music of desperate, extraordinary quality — then silence.</p>`,
+r:[['vl','Volkslied','German folk song','te'],['ac','Austro-German classical','Wagner, Mahler','pu'],['kb','Kabarett tradition','Berlin satirical clubs','am'],['uj','American jazz','Transatlantic import','co']],
+f:[['wk','Weimar Kabarett','Dietrich, Weill, Brecht','am'],['at','Atonalism','Schoenberg, Berg','pu'],['ns','Neue Sachlichkeit','New objectivity','pu'],['wj','Weimar jazz','Comedian Harmonists','co']],
+d:[['br','Brechtian theatre','Music drama tradition','am'],['tt','12-tone music','Serialist tradition','pu'],['el','Electronic music','Stockhausen era','pu'],['sc','Deutsche Schlager','German pop song','am']],
+a:[['vl','wk'],['ac','at'],['kb','wk'],['uj','wj'],['ac','ns'],['at','tt'],['wk','br'],['tt','el'],['wj','sc']]},
+
+ballet:{n:'Ballets Russes',pl:'0FS8T3JHY3qBtFMjHlwFdq',
+desc:`<p>Sergei Diaghilev's Ballet Russes was not a country but it was a world — a mobile republic of the avant-garde that lived in train cars and hotel rooms between Monte Carlo, Paris, and London. After the 1917 Revolution scattered Russia's creative class, Diaghilev's company became the crucible where émigré Russian genius met French modernism.</p><p>In a single decade the company premiered work with sets by Picasso and Matisse, costumes by Chanel, libretti by Cocteau, and scores by Stravinsky, Prokofiev, Poulenc, Milhaud, and de Falla. Stravinsky's Pulcinella (1920) essentially invented neoclassicism. The Apollon Musagète (1928) was Balanchine's first great work, beginning one of the most important partnerships in performance history.</p><p>It is perhaps the single most concentrated burst of collaborative genius in the history of music — and it ran entirely on Diaghilev's personal vision, charm, and ability to convince Europe's greatest artists to work with each other. When he died in 1929, the company dissolved almost immediately.</p>`,
+r:[['rf','Russian folk','Pre-Stravinsky roots','te'],['ic','Imperial classical','Tchaikovsky tradition','pu'],['fm','French modernism','Paris 1900s scene','pu'],['or','Exoticism','Rimsky-Korsakov','am']],
+f:[['sn','Stravinsky neoclassic','Pulcinella, Apollon','pu'],['lb','Les Six ballets','Poulenc, Milhaud','pu'],['pb','Prokofiev ballets','Chout, Prodigal Son','pu']],
+d:[['nc','Neoclassicism','Major 20th c. movement','pu'],['md','Modern dance','Balanchine, NYCB','pi'],['mi','Minimalism','Glass, Reich','pu']],
+a:[['rf','sn'],['ic','sn'],['fm','lb'],['or','pb'],['ic','pb'],['sn','nc'],['lb','md'],['nc','mi'],['pb','md']]},
+
+britain:{n:'Britain',pl:'3e2YqgN7xmA4H0M2kux7cv',
+desc:`<p>Britain in the 1920s was a society haunted by its dead. A generation of young men had been destroyed in the trenches, and the cultural aftermath ranged from desperate gaiety — Bright Young Things, dance bands, the Charleston — to a deep pastoral longing for a pre-war England that may never have quite existed. Both impulses were real, and both produced memorable music.</p><p>The BBC was founded in 1922 and immediately became a conservative cultural force, promoting classical music and received pronunciation while American jazz flooded in through recordings. Vaughan Williams and Holst were crafting an English national music from folk song roots; Jack Hylton was filling the Savoy Hotel ballroom with syncopated rhythms; Noël Coward was writing songs that were somehow both sophisticated and sentimental at once.</p><p>The General Strike of 1926 exposed the class tensions the Edwardian surface had papered over. Britain was an empire in the first stages of its long, slow twilight — still the largest territorial entity in human history, but no longer certain of its own cultural authority.</p>`,
+r:[['mh','Music hall','Victorian entertainment','am'],['ef','English folk','Cecil Sharp revival','te'],['gr','German Romanticism','Brahms, Elgar legacy','pu'],['bb','BBC radio (1922)','First public broadcaster','am']],
+f:[['db','British dance bands','Savoy, Jack Hylton','am'],['ep','English pastoral','Vaughan Williams, Holst','pu'],['bm','British modernism','Walton, Lambert','pu']],
+d:[['bi','British Invasion','Beatles era 1960s','am'],['br','British folk revival','Fairport Convention','te'],['cc','Contemporary British','Britten, Tippett','pu']],
+a:[['mh','db'],['ef','ep'],['gr','ep'],['bb','db'],['ep','cc'],['bm','cc'],['db','bi'],['ef','br']]},
+
+ireland:{n:'Ireland',pl:'01t4YGZMX6grKKAwCoUgpL',
+desc:`<p>The Irish Free State declared independence from Britain in 1922 after a brutal War of Independence and immediately descended into Civil War between pro- and anti-Treaty factions. The cultural politics were intense: should Irish music follow Gaelic Revival purists (back to traditional forms, away from British influence) or embrace the modern world?</p><p>The answer was complicated by geography. In New York, Irish emigrant musicians — the Sligo school of fiddlers, including Michael Coleman and James Morrison — were recording on the new technology and sending their records back home, creating an ironic loop where American technology preserved Irish tradition better than Ireland could. Coleman's recordings of reels and jigs became canonical; entire generations of traditional players learned from his discs.</p><p>John McCormack, the most famous Irish voice in the world, was selling out Carnegie Hall with a mixture of art songs and parlour ballads — proof that Irish culture could be cosmopolitan and world-class, not merely local and nostalgic. The tension between these two visions of Irishness — the global and the local — is still unresolved.</p>`,
+r:[['co','Celtic oral tradition','Millennia of roots','te'],['bb','British ballad','Broadside tradition','am'],['ch','Church music','Gregorian chant','pu'],['em','NYC Irish emigrants','Sligo recordings','am']],
+f:[['it','Irish traditional','Fiddle, pipes, flute','te'],['tn','Irish tenor','McCormack tradition','am'],['cb','Céilí bands','Dance music','te']],
+d:[['fr','Irish folk revival','Chieftains 1960s','te'],['cr','Celtic rock','Pogues, Horslips','te'],['ic','Irish country','Country & Irish','am']],
+a:[['co','it'],['bb','tn'],['ch','tn'],['em','it'],['it','cb'],['it','fr'],['tn','ic'],['fr','cr']]},
+
+spain:{n:'Spain',pl:'6pO4ASb5SE6PGs8FwNCLBc',
+desc:`<p>Spain in the 1920s was under the dictatorship of Primo de Rivera (1923–1930), a period of relative political calm before the chaos of the Republic and the Civil War. In the south, Andalusia's flamenco scene was experiencing what later historians would call its golden age: the era of La Niña de los Peines (Pastora Pavón), whose voice Federico García Lorca would describe as carrying "duende" — a mysterious dark spirit beyond mere technical skill.</p><p>Lorca himself was theorizing the concept of duende in lectures and poems during this decade, trying to articulate what separated genuine flamenco from mere performance. Andrés Segovia was simultaneously transforming the classical guitar into a serious concert instrument, commissioning new works from composers who had previously ignored the instrument. Manuel de Falla had moved from Paris back to Granada, trying to create a modernism rooted in Spanish rather than French soil.</p><p>The country was caught between modernization and tradition, between the Europeanizing ambitions of the cities and the ancient rhythms of the south — a tension that the Civil War would ignite with catastrophic results just a decade later.</p>`,
+r:[['mo','Moorish / Andalusian','Al-Andalus legacy','am'],['sf','Spanish folk','Regional traditions','te'],['ro','Romani / Gypsy','Southern gitanos','pi'],['sb','Spanish Baroque','Polyphonic tradition','pu']],
+f:[['cj','Cante jondo flamenco','Pastora Pavón, duende','pi'],['cg','Classical guitar','Segovia tradition','pu'],['sn','Spanish nationalism','De Falla, Albéniz','pu']],
+d:[['fp','Flamenco puro','Living tradition','pi'],['sm','Spanish modern classical','Post-de Falla','pu'],['nf','Nuevo flamenco','Paco de Lucía era','pi']],
+a:[['mo','cj'],['sf','cj'],['ro','cj'],['sb','sn'],['cj','fp'],['sn','sm'],['fp','nf'],['cg','nf']]},
+
+italy:{n:'Italy',pl:'3hA0o7ClxmzOWFuAwBp2Eu',
+desc:`<p>Mussolini marched on Rome in 1922 and fascism settled in for two decades. Yet the cultural contradictions were immediate: the Futurist movement (Marinetti, Russolo) had been aesthetically allied with the fascist project, but the regime's actual musical taste was conservative — opera and Neapolitan song as national propaganda, not noise machines and manifestos.</p><p>Caruso had died in 1921, leaving a void that no Italian tenor would fill in the same way for a generation. Puccini, the last great opera composer, died in 1924 leaving Turandot unfinished — it premiered posthumously in 1926 at La Scala, with Toscanini laying down his baton at the point where the composer's manuscript ended. Italian canzone napoletana was spreading globally through emigrant communities in New York, Buenos Aires, and Sydney, making Italy's cultural export simultaneously nostalgic and modern.</p><p>Respighi was writing his Roman trilogy, Casella and Malipiero were debating what Italian contemporary music should be — but the real energy, for better and worse, was being channeled into the fascist project of using culture as national mythology.</p>`,
+r:[['bc','Bel canto opera','Rossini, Donizetti','pu'],['ns','Neapolitan song','O Sole Mio tradition','am'],['vm','Verismo movement','Puccini, Leoncavallo','pu'],['if','Italian regional folk','Tarantella, stornello','te']],
+f:[['ve','Verismo opera','Turandot, Pagliacci','pu'],['cn','Canzone napoletana','Caruso era classics','am'],['fu','Futurist music','Russolo noise music','pu']],
+d:[['ot','Opera tradition','La Scala continuity','pu'],['ip','Italian pop','Sanremo Festival','am'],['fl','Italian film music','Morricone tradition','am']],
+a:[['bc','ve'],['ns','cn'],['vm','ve'],['if','cn'],['ve','ot'],['cn','ip'],['fu','fl'],['ot','fl']]},
+
+portugal:{n:'Portugal',pl:'6E4CsUG3YQbYIm5840he1J',
+desc:`<p>Portugal in the 1920s was politically chaotic — 45 governments in 16 years before the 1926 military coup that led eventually to Salazar's Estado Novo dictatorship. The First Republic had promised modernity but delivered only instability. In Lisbon's working-class neighborhoods of Mouraria and Alfama, fado was the sound of saudade — a Portuguese concept of longing with no precise English equivalent, somewhere between nostalgia, melancholy, and fate.</p><p>The guitarra portuguesa — the pear-shaped Portuguese guitar with twelve metal strings — was its essential instrument, the backstreet taverna its natural home. Fado was not polite music; it was the sound of a maritime empire in slow decline, sung by people who had been left behind by the imperial project their country had once led. Ercília Costa was about to become its first true recording star.</p><p>The music encoded something about the Portuguese experience: the country that had built the world's first global empire in the 15th century was, by the 1920s, one of Europe's poorest nations. Saudade was the emotional residue of that historical vertigo — the distance between what had been and what now was.</p>`,
+r:[['pf','Portuguese folk','Rural traditions','te'],['ma','Moorish / Arabic','Medieval influence','am'],['af','African influence','Cape Verde colonies','co'],['sa','Sailor / maritime','Lisbon port culture','am']],
+f:[['fa','Fado','Saudade, guitarra','pi'],['pc','Portuguese classical','Viana da Mota','pu'],['la','Lusophone African','Cape Verde morna','co']],
+d:[['ae','Amália era','Fado golden age','pi'],['bv','Bossa nova bridge','Brazil feedback','pi'],['lp','Lusophone pop','African-fado fusion','am']],
+a:[['pf','fa'],['ma','fa'],['af','fa'],['sa','fa'],['pc','ae'],['fa','ae'],['la','bv'],['ae','lp'],['bv','lp']]},
+
+russia:{n:'Russia / Soviet',pl:'6IGg0BH1DgumSR7iJSefWR',
+desc:`<p>Lenin's New Economic Policy (1921–1928) created a brief window of cultural and economic liberalism in Soviet Russia. Jazz crept into Moscow ballrooms; Dmitri Shostakovich wrote his First Symphony at age 19 to international acclaim; the avant-garde — Constructivism, Suprematism, Proletkult — was producing some of the most radical art anywhere in the world. Alexander Mosolov's Iron Foundry (1926) put an industrial stamping press into a concert hall.</p><p>But the window was closing. Stalin was consolidating power through the 1920s, and the doctrine of Socialist Realism — art must be accessible to the masses and serve the revolutionary state — would end the avant-garde experiment by the early 1930s. The musicians of this period were working with a peculiar intensity, as if they sensed the freeze coming.</p><p>The emigré problem was acute: Prokofiev, Stravinsky, Rachmaninoff had all left Russia after 1917. Those who stayed made an implicit bargain whose terms would only become clear when Stalin showed his hand. Shostakovich would spend the rest of his life negotiating that bargain, writing music that could mean two things at once.</p>`,
+r:[['rf','Russian folk','Peasant oral tradition','te'],['ic','Imperial classical','Tchaikovsky, Rimsky','pu'],['rs','Revolutionary songs','1917 movement','am'],['or','Orthodox sacred','Liturgical tradition','pu']],
+f:[['sa','Soviet art music','Shostakovich, Prokofiev','pu'],['co','Constructivist music','Mosolov, Iron Foundry','pu'],['ms','Mass songs','Collective anthems','am'],['nj','NEP-era jazz','Utyosov, brief window','co']],
+d:[['sr','Socialist Realism','State-mandated style','pu'],['sj','Soviet jazz','Underground survival','co'],['sh','Shostakovich tradition','Symphony, chamber','pu']],
+a:[['rf','sa'],['ic','sa'],['ic','co'],['rs','ms'],['or','sa'],['sa','sr'],['co','sr'],['ms','sr'],['nj','sj'],['sr','sh']]},
+
+hungary:{n:'Hungary',pl:'5XfPmbNKue2iYdl95FocYQ',
+desc:`<p>The Treaty of Trianon (1920) was Hungary's great national catastrophe: the country lost two-thirds of its territory and one-third of its ethnic Hungarian population to the newly created states of Romania, Czechoslovakia, and Yugoslavia. It remains the defining trauma of Hungarian national consciousness a century later.</p><p>This political disaster gave Bartók and Kodály's ethnomusicological project new urgency. They had been systematically collecting Hungarian, Slovak, and Romanian folk music since 1905 — traveling to remote villages with primitive recording equipment, transcribing thousands of songs. Now their field recordings were not just artistic research but an act of cultural survival: if the political borders had been erased, the musical ones could be documented and preserved.</p><p>Bartók's modernism grew directly from this folk material, making the peasant song and the concert hall into the same thing. His string quartets of the 1920s are among the century's most challenging works — and their dissonance and asymmetry came directly from the rhythmic complexity he had heard in Bulgarian and Romanian villages. It was one of the century's great creative alchemies.</p>`,
+r:[['mf','Magyar folk','Bartók fieldwork 1905','te'],['vb','Verbunkos tradition','Romani-Hungarian dance','pi'],['ac','Austro-Hungarian classical','Liszt, Brahms','pu'],['gy','Romani gypsy music','Café violin tradition','pi']],
+f:[['hm','Hungarian modernism','Bartók, Kodály','pu'],['kp','Kodály pedagogy','Folk-based education','te'],['cs','Csárdás dance','Romani popular form','pi']],
+d:[['bt','Bartók tradition','Global classical impact','pu'],['hf','Hungarian folk revival','Táncházmozgalom','te'],['rj','Romani jazz','Django style spread','pi']],
+a:[['mf','hm'],['vb','hm'],['ac','hm'],['gy','vb'],['gy','cs'],['mf','kp'],['hm','bt'],['kp','hf'],['cs','rj']]},
+
+czechia:{n:'Czechoslovakia',pl:'5jw3vukkZbXGZN2myGDJsN',
+desc:`<p>The new Czechoslovak Republic, founded in 1918, was a democratic anomaly in Central Europe — industrialized, educated, with a strong civil society and a remarkable first president in Tomáš Masaryk. Prague had the most vibrant café culture outside Vienna and Paris, a modernist architecture movement, Czech cinema, and a literary scene that included Franz Kafka (who died in 1924).</p><p>Leoš Janáček, then in his late 60s, achieved the world fame he had waited decades for. Katya Kabanova, The Cunning Little Vixen, and The Makropulos Affair were all premiered in this decade — late works of staggering originality, rooted in Czech folk speech rhythms and peasant culture but absolutely modern in their psychology. It was one of the most remarkable late flowerings in musical history.</p><p>Meanwhile the young Bohuslav Martinů left for Paris, where he absorbed jazz and French neoclassicism in his own Czech way. The country was constructing a national cultural identity at speed, aware it was surrounded by larger and more aggressive neighbors, trying to establish who Czechs and Slovaks were before someone else decided for them.</p>`,
+r:[['mv','Moravian folk speech','Janáček source','te'],['cn','Czech nationalism','Smetana, Dvořák','pu'],['gr','German Romanticism','Vienna-Prague link','pu'],['sk','Slovak folk','Regional traditions','te']],
+f:[['jn','Janáček style','Sinfonietta, operas','pu'],['cm','Czech modernism','Martinů in Paris','pu'],['cp','Czech popular','Cabaret, dance bands','am']],
+d:[['cc','Czech chamber','String quartet legacy','pu'],['ct','Contemporary opera','Living tradition','pu'],['cz','Czech pop / rock','Post-war popular','am']],
+a:[['mv','jn'],['cn','jn'],['gr','cm'],['sk','cm'],['jn','cc'],['cm','ct'],['cp','cz'],['ct','cc']]},
+
+poland:{n:'Poland & Klezmer',pl:'1J8M9oBUjlijyxrU8td0Sq',
+desc:`<p>Poland reclaimed nationhood in 1918 after 123 years of partition between Russia, Prussia, and Austria. The 1920 Battle of Warsaw — the "Miracle on the Vistula" — stopped the Red Army and established the borders that would hold until 1939. Warsaw was again a capital, and Polish culture burst forward with the energy of the long-suppressed.</p><p>Warsaw's Jewish community was the largest in Europe outside New York — perhaps 350,000 people, nearly a third of the city's population — and a creative powerhouse in literature, theatre, cabaret, and music. Meanwhile, in New York recording studios, immigrant musicians like Naftule Brandwein and Dave Tarras were documenting klezmer for Victor and Columbia, sending records back to shtetls across Poland and Ukraine. The technology was preserving a world that, unknown to anyone, had fewer than twenty years left.</p><p>Karol Szymanowski was writing his greatest works — King Roger, the Stabat Mater, the Mazurkas — drawing on Polish folk music from the Tatra mountains while living in a Europe of jazz cabarets and modernist manifestos. The decade was full of this tension between the ancient and the urgent.</p>`,
+r:[['as','Ashkenazi folk','Shtetl, Eastern Europe','pi'],['pr','Polish Romanticism','Chopin, Moniuszko','pu'],['ct','Cantorial tradition','Synagogue music','pu'],['se','Sephardic music','Ottoman-Jewish fusion','pi']],
+f:[['kl','Klezmer','NYC immigrant recordings','pi'],['sz','Szymanowski','King Roger, Stabat Mater','pu'],['pf','Polish folk revival','Kapela góralska','te']],
+d:[['kr','Klezmer revival','1980s global revival','pi'],['pj','Polish jazz','Komeda, Urbaniak','co'],['pc','Polish classical','Penderecki, Lutosławski','pu']],
+a:[['as','kl'],['ct','kl'],['pr','sz'],['se','kl'],['kl','kr'],['sz','pj'],['sz','pc'],['pf','pc']]},
+
+balkans:{n:'Balkans & Greece',pl:'34qO2zG1NnlT7DNyFa7Nu2',
+desc:`<p>The post-WWI redrawing of Balkan maps had created Yugoslavia, enlarged Greece, and shattered the old Ottoman world. In 1923, the Lausanne Convention forced the largest population exchange in history — over a million Greek Orthodox Christians expelled from Asia Minor (modern Turkey), hundreds of thousands of Muslims from Greece. Entire communities were uprooted from land their families had farmed for centuries.</p><p>Among the refugees pouring into Athens and Piraeus were musicians from Smyrna (now İzmir) — a city that had been one of the most cosmopolitan in the Mediterranean, a place where Greeks, Turks, Armenians, Jews, and Europeans had coexisted and made music together for centuries. The 1922 destruction of Smyrna's Greek quarter ended that world. The survivors brought their music to the taverns and hash dens of Piraeus, and rebetiko — the Greek "blues" — was born from this displacement.</p><p>Rebetiko carried the Ottoman modal system, the Middle Eastern sensibility, the aching melancholy of exile — and over the next two decades it would transform into Greece's most vital popular music form, the sound of working-class urban life between the wars.</p>`,
+r:[['ot','Ottoman music','Makam tradition','am'],['ro','Romani / Gypsy','Lăutari tradition','pi'],['sl','Slavic folk','Complex rhythms 7/8','te'],['bz','Byzantine sacred','Greek Orthodox chant','pu']],
+f:[['rb','Rebetiko','Greek urban blues','pi'],['la','Lăutari violin','Romanian Romani','pi'],['bf','Bulgarian folk','Asymmetric rhythms','te']],
+d:[['gl','Greek laïká','Popular song tradition','pi'],['bb','Balkan brass','Boban Marković style','pi'],['wm','World music movement','Global folk fusion','pi']],
+a:[['ot','rb'],['ro','la'],['ro','rb'],['sl','bf'],['bz','rb'],['rb','gl'],['la','bb'],['bf','wm'],['bb','wm']]},
+
+japan:{n:'Japan',pl:'2c8pPJH2GeVNkMhXMNx7Sv',
+desc:`<p>The 1920s in Japan — the Taishō democracy era — were a brief, intoxicating window of liberalism between Meiji-era nationalism and the Shōwa militarism that followed. Western jazz was a genuine craze: Tokyo had jazz cafés (jazu kissa), dance halls, department store orchestras, and a "modern girl" (moga) culture that scandalised traditionalists with its short hair, Western clothes, and independent habits.</p><p>The devastating Great Kantō Earthquake of 1923 killed 140,000 people and levelled Tokyo and Yokohama — and paradoxically accelerated modernization, since everything had to be rebuilt from scratch. Radio broadcasting began in 1925, and the new ryūkōka (flowing song) genre was the hybrid emerging from this collision: Japanese pentatonic melody meeting jazz harmony, traditional sentiment meeting modern instrumentation.</p><p>Michio Miyagi was reinventing the koto — a 1,300-year-old court instrument — with new Western harmonic techniques and compositions like "Sea in Spring" that made the ancient sound entirely new. Yamada Kōsaku was composing in a European style inflected with Japanese lyricism. It was a decade of extraordinary cross-cultural synthesis, before militarism decided synthesis was unpatriotic.</p>`,
+r:[['ga','Gagaku court music','Imperial tradition 7th c.','pu'],['hg','Hogaku (koto/shamisen)','Classical instruments','te'],['bc','Buddhist chant','Shōmyō tradition','pu'],['wc','Western classical','Meiji era import','bl']],
+f:[['ry','Ryūkōka pop song','Jazz-folk hybrid','am'],['jc','Jazz café culture','Tokyo / Osaka 1920s','co'],['ks','Koto / shamisen modern','Miyagi, Yamada','te']],
+d:[['en','Enka','Japanese blues','am'],['jp','J-pop','Post-war pop','am'],['jl','Japanese classical','Takemitsu tradition','pu']],
+a:[['ga','ks'],['hg','ks'],['bc','ks'],['wc','ry'],['wc','jc'],['hg','ry'],['ry','en'],['en','jp'],['jc','jp'],['ks','jl']]},
+
+china:{n:'China / Shanghai',pl:'4R6S02tXTQXmUQokdVcZzZ',
+desc:`<p>The 1920s in China were an era of warlords, revolution, and extraordinary cosmopolitan creativity existing simultaneously. The Communist Party was founded in Shanghai in 1921; the Nationalist Party was trying to unify the country; and meanwhile Shanghai under the semi-colonial treaty port system was the most international city in Asia, with French and British concessions where Chinese law did not apply.</p><p>The Bund's jazz clubs and dance halls — the Majestic, the Canidrome, the Del Monte — were filled with Filipino jazz bands, White Russian émigré orchestras playing for refugee aristocrats, and Chinese musicians absorbing everything around them. Li Jinhui was creating shidaiqu ("time-period songs") — the first modern Chinese popular song form, blending pentatonic melody with jazz harmony and Western instrumentation. His daughter Li Minghui became the first Chinese pop star.</p><p>Shanghai in the 1920s was perhaps the world's most improbable city: semi-colonial, wildly cosmopolitan, simultaneously more modern and more ancient than anywhere else, a place where rickshaws and jazz clubs occupied the same block. It was also the city where the revolution that would transform China was being organized in back rooms while the dance bands played.</p>`,
+r:[['cc','Chinese classical','Pentatonic tradition','pu'],['pn','Folk song / mínzú','Regional traditions','te'],['co','Cantonese opera','Yue opera tradition','am'],['uj','American jazz','Shanghai import 1920s','bl']],
+f:[['sd','Shídàiqǔ','Shanghai pop hybrid','pi'],['sj','Shanghai jazz','Cabarets, ballrooms','co'],['tc','Traditional Chinese','Erhu, pipa, guqin','pu']],
+d:[['mp','Mandopop','Taiwan / HK 1970s','am'],['cp','Cantopop','Hong Kong golden age','am'],['cj','Chinese jazz','Living tradition','co']],
+a:[['cc','tc'],['pn','sd'],['co','sd'],['uj','sj'],['sj','sd'],['sd','mp'],['sd','cp'],['sj','cj'],['tc','cj']]},
+
+india:{n:'India',pl:'4pBCxwzOn7NAyfgCVAlb11',
+desc:`<p>The 1920s were the height of Gandhi's mass civil disobedience campaigns — non-cooperation (1920–22), then constitutional politics building toward independence. The Indian National Congress was transforming from a lawyers' club into a mass movement that crossed every caste and linguistic boundary. Music was not incidental to this: bhajans (devotional songs) were used at political rallies, classical music was claimed as proof of India's ancient civilizational greatness.</p><p>The gramophone had been present since HMV's 1902 sessions with Gauhar Jan, who had become the first Indian recording star. By the 1920s the technology was changing how classical music was transmitted — the great khyal singers, Faiyaz Khan and Abdul Karim Khan, were recording for the first time, fixing on shellac vocal traditions that had previously only passed from guru to student through years of close discipleship.</p><p>All-India Radio would not begin until 1930, but the record industry was already remaking the relationship between performer and audience. A court singer who had previously performed for a maharaja's private pleasure now reached thousands of middle-class drawing rooms. Carnatic music in the south and Hindustani music in the north were both navigating this new public existence.</p>`,
+r:[['ve','Vedic chant','3,000+ year tradition','pu'],['dh','Dhrupad tradition','Mughal court music','pu'],['ca','Carnatic / Devadasi','South Indian classical','pu'],['pe','Persian / Mughal','Ghazal, qawwali','am']],
+f:[['kh','Khyal Hindustani','Faiyaz Khan, Karim','pu'],['th','Thumri & ghazal','Gauhar Jan tradition','am'],['cn','Carnatic classical','Subbulakshmi era','pu']],
+d:[['if','Indian film music','Bollywood 1930s','am'],['rr','Raga renaissance','Shankar, Ali Akbar','pu'],['fj','Indo-jazz fusion','Cross-cultural genre','pi']],
+a:[['ve','dh'],['dh','kh'],['ca','cn'],['pe','th'],['pe','kh'],['kh','if'],['cn','rr'],['th','if'],['kh','fj']]},
+
+indonesia:{n:'Indonesia',pl:'5wC8nS8z25UWBTAhZvsWhU',
+desc:`<p>The Dutch East Indies were under colonial rule, but the nationalist movement was gathering force — Sukarno's Indonesian National Party was founded in 1927, and the idea of a unified Indonesian identity (rather than Javanese, Balinese, Sumatran) was being deliberately constructed. Language was part of this: Malay was promoted as a national lingua franca. Music would follow.</p><p>Kroncong, the hybrid music born centuries earlier from Portuguese sailors' guitar traditions meeting Javanese musical sensibility, had been dismissed by the Dutch colonial administration as "degenerate slum music." It persisted anyway, growing through batik workers' music groups and early radio broadcasts. When independence eventually came in 1945, kroncong was claimed as a national sound — impure, hybrid, genuinely Indonesian in its refusal to be purely anything.</p><p>Gamelan music, meanwhile, continued in the courts and temples as it had for centuries — the interlocking bronze-keyed orchestras playing music that Western musicians like Debussy had heard at the 1889 Paris Exposition and found revolutionary. John Cage would later say gamelan changed Western music's understanding of what organized sound could be.</p>`,
+r:[['jg','Javanese gamelan','Hindu-Buddhist courts','te'],['pt','Portuguese sailors','16th c. music','bl'],['ba','Balinese ritual','Sacred temple music','te'],['du','Dutch colonial','European popular','bl']],
+f:[['kr','Kroncong','Portuguese-Java hybrid','pi'],['gt','Gamelan tradition','Court & ritual music','te'],['st','Stambul theatre','Colonial entertainment','am']],
+d:[['dg','Dangdut','Indian-Malay pop fusion','am'],['ip','Indonesian pop','National popular','am'],['gw','Gamelan world music','Global influence','te']],
+a:[['jg','gt'],['pt','kr'],['ba','gt'],['du','st'],['kr','st'],['gt','gw'],['st','dg'],['kr','dg'],['dg','ip']]},
+
+philippines:{n:'Philippines',pl:'5BYyQzEqKwicDuxAVXgIR0',
+desc:`<p>American colonial rule since 1898 had created a peculiarly contradictory society: Filipinos were simultaneously promised eventual independence (the Jones Act of 1916 formalized this) and subjected to Americanization in schools, media, and public life. English was the language of education; American popular music flooded in; yet Filipino cultural identity was being constructed precisely in resistance to this assimilation.</p><p>Manila's dance halls and parlours were the sites of this negotiation. Kundiman — the Filipino romantic love song genre — carried nationalist undertones beneath its surface sentimentality; composers like Francisco Santiago were consciously building a Filipino classical tradition. Harana, the serenade tradition of guitar-playing suitors under windows, preserved a Spanish-colonial layer that American influence was gradually erasing.</p><p>Filipino musicians were in extraordinary demand across Asia — they staffed hotel bands in Shanghai, Singapore, and Hong Kong because they could read Western notation, play jazz and classical repertoire fluently, and had a distinctive lightness of touch. The Philippines was exporting musical talent across the Pacific even as it was still being colonized. This paradox of skilled diaspora under continued subjugation would define Filipino culture for the century.</p>`,
+r:[['sp','Spanish colonial','Zarzuela, church music','bl'],['in','Indigenous folk','Kulintang, gong','te'],['am','American occupation','1898 onwards','bl'],['ch','Catholic sacred','Liturgical tradition','pu']],
+f:[['ku','Kundiman','Filipino love song','am'],['ha','Harana serenade','Guitar courtship','am'],['pj','Philippine jazz','American influence','co']],
+d:[['op','OPM (Pilipino pop)','1970s onwards','am'],['pk','Philippine folk','Rondalla tradition','te'],['ms','Manila sound','1970s–80s','am']],
+a:[['sp','ku'],['in','ku'],['am','pj'],['ch','ha'],['ku','op'],['ha','op'],['pj','op'],['in','pk'],['op','ms']]},
+
+korea:{n:'Korea',pl:'7Gt85Zw70uHMFVs64wE3Ry',
+desc:`<p>Korea was under brutal Japanese colonial occupation (1910–1945). The March 1st Independence Movement of 1919 — mass non-violent protests across the country — had been met with mass arrests, beatings, and an estimated 7,000 deaths. The Japanese colonial administration was systematically suppressing Korean language, forcing Koreans to take Japanese names, and attempting to erase Korean cultural identity at the root.</p><p>In this context, music became a form of resistance. Arirang — the ancient folk lament whose words vary endlessly by region but whose melody is unmistakable — became a symbol of national identity so powerful that the Japanese eventually banned public performances. Pansori, the solo operatic narrative form in which a single performer with a drummer tells hours-long stories drawn from Korean folk literature, preserved the oral literary tradition when other forms of expression were closed off.</p><p>The encounter with Japanese music was also generating new hybrid forms: trot (or ppongtchak), the Korean version of the Japanese enka style, would become enormously popular precisely because it had absorbed the colonizer's sounds and made them Korean. This was its own kind of survival — not purity but transformation.</p>`,
+r:[['cf','Confucian court','Jeongak tradition','pu'],['sh','Shamanic music','Mudang ritual','te'],['bu','Buddhist chant','Beompae tradition','pu'],['jc','Japanese colonial','1910–1945 influence','bl']],
+f:[['ps','Pansori drama','Korean oral epic','te'],['jg','Jeongak court music','Royal court ensemble','pu'],['mn','Minyо folk songs','Arirang tradition','te']],
+d:[['tr','Trot / ppongtchak','Korean-enka hybrid','am'],['kc','Korean classical','Traditional revival','pu'],['kp','K-pop','Global phenomenon','am']],
+a:[['cf','jg'],['sh','ps'],['bu','jg'],['jc','tr'],['ps','mn'],['jg','kc'],['mn','kp'],['tr','kp']]},
+
+cuba:{n:'Cuba',pl:'6zsNWTEMQOkJ8cgYIUPVy7',
+desc:`<p>Cuba in the 1920s was nominally independent but effectively a US protectorate — the Platt Amendment written into the Cuban constitution allowed American military intervention, and US corporations owned much of the sugar and tobacco economy. President Machado's dictatorship from 1925 added political repression to economic dependence. The island was caught between formal sovereignty and material subordination.</p><p>And yet: this was precisely the decade when son cubano exploded. The Sexteto Habanero, Trío Matamoros, and Ignacio Piñeiro were recording music of such rhythmic sophistication and melodic beauty that its influence would eventually be felt in every corner of global popular music. Son synthesized everything Cuba had — Yoruba religious rhythm, Spanish guitar and vocal tradition, African call-and-response, the refinement of Havana salon culture — into something that felt both ancient and electrically new.</p><p>Don Azpiazu's 1930 tour of the United States — arriving in New York just as the decade ended — introduced American audiences to what Cuba had built. The response was immediate: "El Manisero" (The Peanut Vendor) was a massive hit. The Latin music revolution in America had begun, decades before anyone used that phrase.</p>`,
+r:[['yo','Yoruba / Lucumí','Santería tradition','co'],['cg','Congo / Bantu','Tumba francesa','co'],['sp','Spanish colonial','Punto guajiro','am'],['ha','French-Haitian','Creole influence','am']],
+f:[['so','Son cubano','Sexteto Habanero era','co'],['dz','Danzón','Ballroom of Havana','am'],['ru','Rumba afrocubana','Street percussion','co']],
+d:[['ma','Mambo / Cha-cha-cha','Pérez Prado 1940s','co'],['sl','Salsa','NYC 1970s','co'],['lj','Latin jazz','Cubop, Dizzy, Chano','pi']],
+a:[['yo','ru'],['cg','ru'],['sp','so'],['ha','dz'],['ru','so'],['so','ma'],['so','sl'],['dz','ma'],['ru','ma'],['ma','lj'],['so','lj']]},
+
+caribbean:{n:'Caribbean',pl:'1VMSZp2ZrUjId9AMTVA4zS',
+desc:`<p>The Caribbean in the 1920s was a patchwork of French, British, American, and Dutch colonial controls, but the music moved between islands and empires with complete indifference to those political boundaries. Trinidad, Jamaica, Haiti, Puerto Rico, Martinique — each island had its own distinct music, but all were shaped by the same basic history: African rhythmic heritage meeting European harmonic and melodic tradition in conditions of colonial violence and poverty.</p><p>In Trinidad, calypso was functioning as oral journalism and political satire — Attila the Hun and Lord Executor performed commentary on everything from the League of Nations to local gossip, encoded in metaphor and double meaning because direct political speech was dangerous. Marcus Garvey's pan-African movement was headquartered simultaneously in Jamaica and Harlem, using music as part of the project of forging Black identity across the diaspora. These sounds were beginning their long journey into global popular music.</p><p>Haitian méringue, Jamaican mento, Puerto Rican plena and bomba, Dominican merengue — all were distinct traditions that would eventually cross-fertilize with each other and with Cuban son and American jazz to produce the extraordinary Latin and Caribbean music of the second half of the century.</p>`,
+r:[['wa','West African rhythms','Retained in diaspora','co'],['fr','French colonial','Haiti, Martinique','bl'],['br','British colonial','Trinidad, Jamaica','bl'],['sp','Spanish colonial','Puerto Rico, DR','bl']],
+f:[['ca','Calypso (Trinidad)','Attila, Lord Executor','am'],['me','Méringue (Haiti)','National dance','am'],['mn','Mento (Jamaica)','Pre-reggae folk pop','te'],['pl','Plena / Bomba (PR)','Afro-Puerto Rican','co'],['mg','Merengue (DR)','Accordion tradition','am']],
+d:[['sc','Soca','Soul + calypso 1970s','co'],['rg','Ska to Reggae','Jamaica 1960s–70s','te'],['sn','Salsa (New York)','Caribbean diaspora','co'],['ba','Bachata','DR guitar tradition','am']],
+a:[['wa','ca'],['fr','me'],['br','ca'],['br','mn'],['sp','pl'],['sp','mg'],['wa','pl'],['ca','sc'],['mn','rg'],['pl','sn'],['mg','ba'],['me','sn']]},
+
+argentina:{n:'Argentina',pl:'43J0Zc1GhjRAiO4XDIwF0i',
+desc:`<p>Argentina in the 1920s was one of the wealthiest countries in the world — its cities swollen with Italian and Spanish immigrants, its pampas feeding Europe, its GDP per capita comparable to France or Germany. Buenos Aires rivalled Paris as a cultural capital, with more theatres per capita and a genuine artistic ambition that was not provincial imitation but the real thing.</p><p>Tango had already scandalized and conquered Europe (Paris went mad for it in 1913), and returned home transformed: respectable, sophisticated, no longer associated purely with the brothels and conventillos of the immigrant poor. The 1920s was the transition from Guardia Vieja (old guard) to Guardia Nueva (new guard) — Carlos Gardel was recording and becoming the most famous voice in the Spanish-speaking world; Julio De Caro was elevating tango into art music; Pedro Maffia and Pedro Laurenz were expanding the bandoneon's vocabulary.</p><p>Tango encoded Argentina's peculiar social history: European immigrants longing for the old country, mixed with African-descended candombe rhythms, shaped by the melancholy of the pampas. It was a music born of nostalgia for places the dancers had never been — the immigrant's eternal condition translated into dance.</p>`,
+r:[['cd','African candombe','Río de la Plata','co'],['eu','European immigration','Italian, Spanish','bl'],['ga','Gaucho folk music','Payador tradition','te'],['bn','German bandoneon','Arrives 1880s','am']],
+f:[['tg','Tango','Gardel, Canaro, De Caro','pi'],['ml','Milonga','Pre-tango root form','pi'],['fl','Folklore movement','Northwest folk music','te']],
+d:[['tn','Tango nuevo','Piazzolla era 1950s','pi'],['pz','Astor Piazzolla','Classical-tango fusion','pi'],['ar','Argentine rock','Rock nacional 1970s','am']],
+a:[['cd','ml'],['eu','tg'],['ga','ml'],['bn','tg'],['ml','tg'],['tg','tn'],['tn','pz'],['tg','pz'],['ga','fl'],['fl','ar']]},
+
+brazil:{n:'Brazil',pl:'6uCA5Ffj5rJkyBhjQDHOzM',
+desc:`<p>Brazil in the 1920s was finding its national cultural identity with extraordinary speed. The Semana de Arte Moderna (Modern Art Week, São Paulo, February 1922) was the Brazilian modernism movement's declaration of independence from European aesthetic authority — Mário de Andrade, Oswald de Andrade, Tarsila do Amaral announcing that Brazil would look to its own mestizo, African, and indigenous roots for inspiration rather than imitating Paris.</p><p>In Rio's Estácio neighborhood, samba was coalescing — from African Candomblé religious rhythm, Portuguese melodic tradition, and carnival energy — into the thing it would become. Donga and Pixinguinha had already recorded "Pelo Telefone" in 1917, often called samba's birth certificate. Pixinguinha was developing choro, the earlier Brazilian instrumental form, into a vehicle of great harmonic and rhythmic sophistication.</p><p>Brazil's musical history is a story of African retention — the Yoruba, Congo, and Bantu traditions brought by enslaved people had never been fully suppressed, and they surfaced constantly through samba, candomblé, capoeira rhythms, and the percussive foundation of everything. The 1922 modernists were simply the first educated Brazilians to say publicly that this was not something to be embarrassed about but something to celebrate.</p>`,
+r:[['yo','Yoruba / Candomblé','African religious root','co'],['pt','Portuguese folk','Colonial musical base','am'],['in','Indigenous Brazilian','Tupi, Guarani music','te'],['eu','European classical','Choro, salon music','bl']],
+f:[['sa','Samba','Born Estácio 1917','co'],['ch','Choro','Pixinguinha, Nazareth','pi'],['mx','Maxixe','Pre-samba dance form','pi']],
+d:[['bn','Bossa Nova','Jobim, Gilberto 1958','pi'],['mp','MPB','Brazilian popular music','pi'],['fk','Funk carioca','Rio favela music','co']],
+a:[['yo','sa'],['pt','ch'],['in','sa'],['eu','ch'],['mx','sa'],['sa','bn'],['ch','bn'],['bn','mp'],['sa','fk'],['mp','fk']]},
+
+mexico:{n:'Mexico',pl:'2rPrL25R4waQGEJ3fN2cKO',
+desc:`<p>Post-revolutionary Mexico (the Revolution had consumed 1910–1920) was engaged in the extraordinary project of inventing itself. The muralist movement — Rivera, Orozco, Siqueiros — was painting national mythology on public walls, literally putting the history of the Indian and mestizo poor onto the walls of government buildings. President Obregón and then Calles were building a secular nationalist state, and culture was part of this project.</p><p>Mariachi was being elevated from a regional tradition of Jalisco and Nayarit into a national symbol of Mexicanidad. Silvestre Revueltas and Carlos Chávez were creating a Mexican concert music that used indigenous and folk sources — part of the same nationalist impulse as the muralists, insisting that what was genuinely Mexican was more interesting than what was European. Guty Cárdenas from Yucatán was writing boleros of heartbreaking beauty.</p><p>The Cristero War (1926–1929) erupted when the Calles government tried to enforce strict separation of church and state — tens of thousands died in a conflict that revealed how deep the tensions between modern secularism and Catholic tradition ran in Mexican society. The corrido ballad form — Mexico's musical newspaper — documented every side of it.</p>`,
+r:[['in','Indigenous music','Aztec, Maya roots','te'],['sp','Spanish colonial','Baroque church music','bl'],['af','African influence','Veracruz coast','co'],['cu','Cuban influence','Son, bolero import','am']],
+f:[['ma','Mariachi / Son','National symbol','am'],['co','Corrido ballad','Revolution narrative','te'],['bo','Mexican bolero','Guty Cárdenas, Lara','am']],
+d:[['ra','Ranchera','Jorge Negrete era','am'],['mp','Mexican pop','Latin export','am'],['nc','Narcocorrido','Modern corrido','te']],
+a:[['in','ma'],['sp','ma'],['af','ma'],['cu','bo'],['sp','co'],['ma','ra'],['ra','mp'],['co','nc'],['bo','mp']]},
+
+colombia:{n:'Colombia & Peru',pl:'0a6v2yALJMBKAF4u1UhLUw',
+desc:`<p>The Andean republics in the 1920s were modernizing under oligarchic rule, their major cities connected to global trade but their countryside still living in patterns barely changed since the colonial era. Colombia's "Dance of the Millions" — a coffee export boom — was bringing wealth to Bogotá and Medellín; Peru's Leguía government was funding infrastructure while suppressing indigenous rights.</p><p>In Lima, Felipe Pinglo Alva was writing vals criollo — Peruvian waltz — that spoke to the urban working class with a poet's ear for heartbreak and social injustice. The vals criollo was Lima's bourgeois parlor music transformed into something darker and more truthful by a man who died young and left behind a body of work that Peru still regards as its most essential urban song tradition.</p><p>In Colombia, bambuco was the official national music — politely bourgeois, performed at formal occasions — while cumbia was still primarily Afro-Colombian working-class music tied to Caribbean coastal drum culture. Its transformation into Colombia's national export lay decades ahead. The Andes held ancient Quechua and Aymara musical traditions that had survived 400 years of colonialism and were only now beginning to be documented.</p>`,
+r:[['an','Andean indigenous','Quechua, Aymara','te'],['sp','Spanish colonial','Mestizo culture','bl'],['af','African Atlantic','Afro-Colombian coast','co'],['pa','Pacific indigenous','Marimba tradition','te']],
+f:[['ba','Bambuco (Colombia)','National music','te'],['vc','Vals criollo (Peru)','Pinglo Alva era','am'],['cu','Cumbia','Atlantic coast drums','co']],
+d:[['cg','Cumbia global','LA, Buenos Aires','co'],['ar','Andean folk revival','Nueva canción','te'],['cp','Colombian pop','Vallenato tradition','am']],
+a:[['an','ba'],['sp','ba'],['af','cu'],['an','vc'],['sp','vc'],['ba','ar'],['vc','ar'],['cu','cg'],['cg','cp']]},
+
+egypt:{n:'Egypt',pl:'5j4Z9uvliylbXtpN08EGTH',
+desc:`<p>Egypt in the 1920s was experiencing a cultural renaissance alongside its political one. The 1919 Revolution had won nominal independence from Britain by 1922; Saʿd Zaghloul and the Wafd Party represented a genuine mass nationalism that cut across class lines. Howard Carter's discovery of Tutankhamun's tomb in November 1922 made Egypt the center of global fascination — Egyptomania swept Western fashion, architecture, and design.</p><p>Cairo was becoming the Hollywood of the Arab world, its film industry, theatre scene, and recording studios attracting talent from across the region. Sayed Darwish had died tragically young in 1923, but in his short life he had reformed Egyptian popular music — setting vernacular Arabic poetry to music that drew on both the classical maqam system and European harmony, creating the template for modern Arabic song. Umm Kulthum was beginning her rise from a village girl who sang Quran at weddings to the most important Arabic vocalist who would ever live.</p><p>The takht ensemble — oud, qanun, nay, violin, riq — was the vehicle through which this music moved, a small chamber group of great refinement. Egyptian music's complexity lay in its microtonal intervals and its philosophy of improvisation: a good performance was never the same twice.</p>`,
+r:[['aq','Arabic maqam','Classical modal system','pu'],['ot','Ottoman influence','Turkish makam','am'],['co','Coptic Christian','Pre-Islamic sacred','pu'],['ph','Pharaonic heritage','Ancient tradition','te']],
+f:[['em','Egyptian maqam vocal','Umm Kulthum, Darwish','pu'],['tk','Takht ensemble','Oud, qanun, nay','am'],['as','Egyptian art song','Classical fusion','am']],
+d:[['ap','Arabic pop','Fairouz, Abdel Halim','am'],['ef','Egyptian film music','Cairo film industry','am'],['ac','Arabic classical revival','Living tradition','pu']],
+a:[['aq','em'],['ot','tk'],['co','em'],['em','tk'],['tk','as'],['as','ap'],['as','ef'],['em','ac']]},
+
+africa:{n:'Africa',pl:'2iRgpfyQGIUJweegTsPTNV',
+desc:`<p>The African continent in the 1920s was almost entirely under colonial rule — British, French, Belgian, Portuguese, Italian — but the music was already developing the hybrid forms that would eventually power global popular culture. African musicians were doing what they had always done: absorbing new sounds and making something entirely their own.</p><p>In Johannesburg's townships, marabi music played in the shebeens (illegal drinking establishments) was fusing African rhythms with American ragtime and jazz brought back on records. Abdullah Ibrahim (then still Dollar Brand, decades away) would later describe marabi as the DNA of South African jazz. In Zanzibar, Siti binti Saad was recording taarab — Swahili coastal music mixing Arabic maqam with African percussion and poetry — and becoming the first widely popular female recording artist on the African continent. In Ghana, palm wine guitar was carrying Akan music into the acoustic age.</p><p>The anti-colonial movements were gathering force: the African National Congress had been founded in 1912; the pan-African congress in 1919 brought together activists from across the diaspora. Music would be central to the independence movements of the following decades — highlife in Ghana, mbaqanga in South Africa, jùjú in Nigeria — all rooted in the hybrid forms being created in this decade.</p>`,
+r:[['gr','Griot tradition','West African oral history','te'],['zu','Zulu / Bantu vocal','South African roots','te'],['sw','Swahili coastal','East African port music','pi'],['ia','Indian / Arab trade','Zanzibar influence','am']],
+f:[['pw','Palm wine guitar','Ghana, Jacob Sam era','te'],['mb','Marabi','Johannesburg township','co'],['ta','Taarab','Zanzibar, Siti bint Saad','pi']],
+d:[['hl','Highlife','Ghana / Nigeria dance','co'],['sj','South African jazz','Miriam Makeba era','co'],['ab','Afrobeat','Fela Kuti 1970s','co']],
+a:[['gr','pw'],['zu','mb'],['sw','ta'],['ia','ta'],['pw','hl'],['mb','sj'],['hl','ab'],['sj','ab'],['ta','ab']]},
+
+middleeast:{n:'Middle East',pl:'2UdLWoNO5PkImn4fdMdfmq',
+desc:`<p>The collapse of the Ottoman Empire after WWI created a vacuum that the League of Nations filled with British and French mandates — Iraq, Syria, Lebanon, and Palestine as new entities drawn in London and Paris offices, frequently ignoring the actual populations living there. The Sykes-Picot agreement's consequences were becoming visible: borders that cut through tribal and sectarian communities, states without nations.</p><p>Atatürk was building secular Turkey with extraordinary speed — abolishing the caliphate in 1924, banning the Ottoman script, imposing Western dress codes, creating a republic where there had been a theocratic empire. Iran under Reza Shah's modernization was pursuing a similar project. The traditional musical systems — Ottoman makam, Persian radif, Arabic maqam — all faced the same existential question: modernize or be marginalized by the new secular states that associated classical Islamic music with the old regime.</p><p>Ali-Naqi Vaziri in Iran was systematically documenting Persian classical music and creating a conservatory tradition. In Istanbul, the gazino (entertainment hall) culture was the site of negotiation between Ottoman classical forms and the new Turkish popular music. In these venues, ancient modal music met Western instruments and, gradually, Western harmony. The result was neither one thing nor the other — which is to say, it was entirely itself.</p>`,
+r:[['ot','Ottoman court music','Makam tradition','pu'],['pe','Persian dastgah','Radif tradition','pu'],['aq','Arabic maqam','Gulf & Levant forms','pu'],['su','Sufi sacred music','Whirling dervishes','am']],
+f:[['tf','Turkish fasıl','Gazino entertainment','am'],['pc','Persian classical','Ali-Naqi Vaziri','pu'],['at','Arabic takht','Regional variations','am']],
+d:[['ta','Turkish arabesk','1970s urban fusion','am'],['ip','Iranian pop','Pre-revolution scene','am'],['ac','Arabic classical revival','Living tradition','pu']],
+a:[['ot','tf'],['pe','pc'],['aq','at'],['su','tf'],['tf','ta'],['pc','ip'],['at','ac'],['su','ac']]},
+
+australia:{n:'Australia',pl:'4TRs3092SQ6FMWb40ALm12',
+desc:`<p>Post-WWI Australia was a society of complicated grief and fervent nationalism. The ANZAC campaign at Gallipoli (1915), though a military disaster, had become the founding myth of Australian nationhood — a story of courage and mateship in defeat that suited a country still defining itself against Britain. Returned soldiers carried the ambivalence of men who had seen the worst of the empire's wars and come home to build something different.</p><p>In the outback, Aboriginal Australians remained subject to systematic assimilation policies — children taken from their families, languages suppressed, traditional ceremonies banned — a project of cultural destruction whose consequences would take generations to partially reverse. The extraordinary depth of Aboriginal musical tradition, some of the oldest continuous musical culture on earth (songlines mapping the entire continent), was invisible to mainstream Australian society.</p><p>In the cities, American records were flooding in alongside silent films with jazz accompaniment; Percy Grainger was already internationally famous (he had left for America in 1914 but remained culturally Australian); and the bush ballad tradition — Banjo Paterson's words set to bush tunes, Waltzing Matilda — was being preserved even as the cities moved toward American popular music. Peter Dawson, the great Australian bass-baritone, was one of the most recorded artists in the world.</p>`,
+r:[['ab','Aboriginal songlines','40,000+ year tradition','te'],['br','British ballad','Convict & settler songs','am'],['ir','Irish folk music','Immigrant tradition','te'],['us','American music','Tin Pan Alley import','bl']],
+f:[['bb','Bush ballad','Waltzing Matilda era','am'],['ac','Australian classical','Percy Grainger','pu'],['ap','Parlour song','Dawson, Lemmone era','am']],
+d:[['au','Australian country','Slim Dusty era','am'],['rv','Aboriginal revival','Yothu Yindi era','te'],['pp','Australian pop / rock','INXS, Midnight Oil','am']],
+a:[['ab','rv'],['br','bb'],['ir','bb'],['us','ap'],['bb','au'],['au','pp'],['ap','pp'],['ac','pp']]}
+};
+
+const SP_SVG=`<svg class="sp-ico" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>`;
+
+// Build top nav — grouped by region
+const navEl=document.getElementById('nav-inner');
+REGIONS.forEach(({g,countries})=>{
+  const grp=document.createElement('div');
+  grp.className='region-group';
+  if(g){const lbl=document.createElement('span');lbl.className='region-label';lbl.textContent=g;grp.appendChild(lbl);}
+  countries.forEach(k=>{
+    const btn=document.createElement('button');
+    btn.className=k==='world'?'nav-btn nav-world':'nav-btn';
+    btn.textContent=DATA[k].n;btn.dataset.k=k;
+    btn.onclick=()=>show(k);
+    grp.appendChild(btn);
+  });
+  navEl.appendChild(grp);
+});
+
+function xe(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function renderDiag(k){
+  const reg=DATA[k];
+  const cols=[reg.r,reg.f,reg.d];
+  const HDRS=['Root influences','1920s forms','Musical descendants'];
+  const CX=[10,263,515],CW=155,NH=52,NG=8,SY=40;
+  const maxN=Math.max(...cols.map(c=>c.length));
+  const svgH=maxN*(NH+NG)-NG+SY+20;
+  const pos={};
+  cols.forEach((col,ci)=>{
+    const totalH=col.length*(NH+NG)-NG;
+    const sy0=SY+((maxN*(NH+NG)-NG)-totalH)/2;
+    col.forEach((nd,ni)=>{
+      const y=sy0+ni*(NH+NG);
+      pos[nd[0]]={lx:CX[ci],rx:CX[ci]+CW,cy:y+NH/2,y,ci};
+    });
+  });
+  let s=`<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>`;
+  HDRS.forEach((h,i)=>{
+    const hx=CX[i]+CW/2;
+    s+=`<text x="${hx}" y="18" text-anchor="middle" style="font-size:10px;font-weight:600;fill:var(--t3);font-family:inherit;letter-spacing:.05em;text-transform:uppercase">${h}</text>`;
+    s+=`<line x1="${CX[i]}" y1="24" x2="${CX[i]+CW}" y2="24" stroke-width="0.5" style="stroke:var(--bd)"/>`;
+  });
+  reg.a.forEach(([fr,to])=>{
+    const fp=pos[fr],tp=pos[to];
+    if(!fp||!tp||fp.ci===tp.ci) return;
+    const x1=fp.rx,y1=fp.cy,x2=tp.lx,y2=tp.cy,cp=28;
+    s+=`<path d="M${x1} ${y1} C${x1+cp} ${y1} ${x2-cp} ${y2} ${x2} ${y2}" fill="none" stroke-width="0.8" marker-end="url(#arr)" style="stroke:var(--bd2)"/>`;
+  });
+  cols.forEach(col=>{
+    col.forEach(nd=>{
+      const[id,lbl,sub,c]=nd,p=pos[id];
+      if(!p) return;
+      const cx=p.lx+CW/2;
+      s+=`<g style="cursor:pointer" onclick="window.open('https://open.spotify.com/search/${encodeURIComponent(lbl)}','_blank')">`;
+      s+=`<rect x="${p.lx}" y="${p.y}" width="${CW}" height="${NH}" rx="5" stroke-width="0.5" style="fill:var(--${c}-f);stroke:var(--${c}-k)"/>`;
+      s+=`<text x="${cx}" y="${p.y+17}" text-anchor="middle" dominant-baseline="central" style="font-size:12px;font-weight:500;fill:var(--${c}-t);font-family:inherit">${xe(lbl)}</text>`;
+      s+=`<text x="${cx}" y="${p.y+35}" text-anchor="middle" dominant-baseline="central" style="font-size:10px;fill:var(--${c}-s);font-family:inherit">${xe(sub)}</text>`;
+      s+=`</g>`;
+    });
+  });
+  const svg=document.getElementById('diag');
+  svg.setAttribute('viewBox',`0 0 680 ${svgH}`);
+  svg.innerHTML=s;
+}
+
+// Build browse-by-country grid on intro page
+const browseEl=document.getElementById('browse-countries');
+const browseTitle=document.createElement('div');
+browseTitle.className='browse-section-title';browseTitle.textContent='Browse by country';
+browseEl.appendChild(browseTitle);
+REGIONS.forEach(({g,countries})=>{
+  const regionDiv=document.createElement('div');
+  regionDiv.className='browse-region';
+  if(g){const regionLabel=document.createElement('div');regionLabel.className='browse-region-label';regionLabel.textContent=g;regionDiv.appendChild(regionLabel);}
+  const grid=document.createElement('div');
+  grid.className='browse-grid';
+  countries.forEach(k=>{
+    const btn=document.createElement('button');
+    btn.className=k==='world'?'browse-btn browse-world':'browse-btn';
+    btn.textContent=DATA[k].n;
+    btn.onclick=()=>show(k);
+    grid.appendChild(btn);
+  });
+  regionDiv.appendChild(grid);
+  browseEl.appendChild(regionDiv);
+});
+
+// ── Vignette loader ──────────────────────────────────────────────────────────
+let vigManifest=null;
+
+async function initManifest(){
+  try{
+    const r=await fetch('vignettes/manifest.json');
+    if(r.ok) vigManifest=await r.json();
+    else vigManifest={};
+  }catch(e){ vigManifest={}; }
+}
+
+async function loadVignettes(k){
+  const el=document.getElementById('c-vignettes');
+  const divider=document.getElementById('c-vignette-divider');
+  if(!vigManifest||!vigManifest[k]){
+    el.innerHTML='';
+    divider.style.display='none';
+    return;
+  }
+  const count=vigManifest[k];
+  el.innerHTML='<p class="vignette-loading">Loading…</p>';
+  const frags=[];
+  for(let i=1;i<=count;i++){
+    try{
+      const r=await fetch(`vignettes/${k}_${i}.html`);
+      if(r.ok) frags.push(await r.text());
+    }catch(e){}
+  }
+  if(frags.length){
+    el.innerHTML=frags.join('\n');
+    divider.style.display='';
+    el.querySelectorAll('.vignette-images img').forEach(img=>{
+      img.onclick=()=>{
+        document.getElementById('lightbox-img').src=img.src;
+        document.getElementById('lightbox').classList.add('open');
+      };
+    });
+  }else{
+    el.innerHTML='';
+    divider.style.display='none';
+  }
+}
+
+function showIntro(){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('nav').style.display='none';
+  document.getElementById('intro').style.display='block';
+  document.getElementById('main').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function show(k){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.k===k));
+  const d=DATA[k];
+  document.getElementById('intro').style.display='none';
+  document.getElementById('nav').style.display='block';
+  document.getElementById('main').style.display='block';
+  document.getElementById('c-name').textContent=d.n;
+  document.getElementById('c-desc').innerHTML=d.desc;
+  // Build playlist button(s)
+  const btnsEl=document.getElementById('c-spotify-btns');
+  btnsEl.innerHTML='';
+  const playlists=d.pls||[{id:d.pl,label:'Open on Spotify'}];
+  playlists.forEach(({id,label})=>{
+    const a=document.createElement('a');
+    a.className='spotify-btn';
+    a.href=`https://open.spotify.com/playlist/${id}`;
+    a.target='_blank';
+    a.innerHTML=`${SP_SVG}${label}`;
+    btnsEl.appendChild(a);
+  });
+  renderDiag(k);
+  loadVignettes(k);
+  const hasDiag=d.r&&d.r.length>0;
+  document.querySelector('.divider').style.display=hasDiag?'':'none';
+  document.querySelector('.diagram-title').style.display=hasDiag?'':'none';
+  document.getElementById('diag').style.display=hasDiag?'':'none';
+  document.querySelector('.legend').style.display=hasDiag?'':'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+initManifest();
+</script>
+</body>
+</html>
