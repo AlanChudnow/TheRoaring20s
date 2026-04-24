@@ -1,7 +1,7 @@
 {
   "us": [
     {
-      "title": "Harlem Rent Party — Josephine Before Paris",
+      "title": "Harlem Rent Party \u2014 Josephine Before Paris",
       "text": "vignettes/us_1_text.html",
       "pics": [
         "images/us_1_pic1.jpg",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "title": "Tin Pan Alley — Late Afternoon Turning to Night",
+      "title": "Tin Pan Alley \u2014 Late Afternoon Turning to Night",
       "text": "vignettes/us_2_text.html",
       "pics": [
         "images/us_2_pic1.jpg",
@@ -23,9 +23,26 @@
       ]
     }
   ],
+  "france": [
+    {
+      "title": "Paris, October 1925 \u2014 Sidney Bechet Plays the Night Josephine Baker Becomes a Star",
+      "text": "vignettes/france_1_text.html",
+      "pics": [
+        "images/france_1_pic1.jpg",
+        "images/france_1_pic2.jpg",
+        "images/france_1_pic3.jpg",
+        "images/france_1_pic4.jpg",
+        "images/france_1_pic5.jpg",
+        "images/france_1_pic6.jpg",
+        "images/france_1_pic7.jpg",
+        "images/france_1_pic8.jpg",
+        "images/france_1_pic9.jpg"
+      ]
+    }
+  ],
   "poland": [
     {
-      "title": "Eastern Poland, 1920 — The Klezmer Clarinet Player Arrives",
+      "title": "Eastern Poland, 1920 \u2014 The Klezmer Clarinet Player Arrives",
       "text": "vignettes/poland_1_text.html",
       "pics": [
         "images/poland_1_pic1.jpg",
@@ -36,7 +53,7 @@
   ],
   "argentina": [
     {
-      "title": "Buenos Aires — Where Tango Begins, and the Women Decide Everything",
+      "title": "Buenos Aires \u2014 Where Tango Begins, and the Women Decide Everything",
       "text": "vignettes/argentina_1_text.html",
       "pics": [
         "images/argentina_1_pic1.jpg",
@@ -50,7 +67,7 @@
   ],
   "britain": [
     {
-      "title": "London, 1926 — Bertie Wooster Attempts the Charleston",
+      "title": "London, 1926 \u2014 Bertie Wooster Attempts the Charleston",
       "text": "vignettes/britain_1_text.html",
       "pics": [
         "images/britain_1_pic1.jpg",
@@ -58,20 +75,24 @@
         "images/britain_1_pic3.jpg",
         "images/britain_1_pic4.jpg",
         "images/britain_1_pic5.jpg",
-        "images/britain_1_pic6.jpg",
-        "images/britain_1_pic7.jpg",
-        "images/britain_1_pic8.jpg",
-        "images/britain_1_pic9.jpg",
-        "images/britain_1_pic10.jpg",
-        "images/britain_1_pic11.jpg",
-        "images/britain_1_pic12.jpg",
-        "images/britain_1_pic13.jpg"
+        "images/britain_1_pic6.jpg"
       ]
     }
   ],
   "germany": [
     {
-      "title": "Berlin, 1928 — An Englishman Learns a Word He Didn't Know He Was Missing",
+      "title": "Berlin, December 1925 \u2014 Alma Mahler Attends the Premiere of Wozzeck",
+      "text": "vignettes/germany_1_text.html",
+      "pics": [
+        "images/germany_1_pic1.jpg",
+        "images/germany_1_pic2.jpg",
+        "images/germany_1_pic3.jpg",
+        "images/germany_1_pic4.jpg",
+        "images/germany_1_pic5.jpg"
+      ]
+    },
+    {
+      "title": "Berlin, 1928 \u2014 An Englishman Learns a Word He Didn\u2019t Know He Was Missing",
       "text": "vignettes/germany_2_text.html",
       "pics": [
         "images/germany_2_pic1.jpg",
@@ -90,6 +111,92 @@
         "images/germany_2_pic14.jpg",
         "images/germany_2_pic15.jpg",
         "images/germany_2_pic16.jpg"
+      ]
+    }
+  ],
+  "africa": [
+    {
+      "title": "Johannesburg, 1926 \u2014 Nomvula Runs the Shebeen Where Marabi Was Born",
+      "text": "vignettes/africa_1_text.html",
+      "pics": [
+        "images/africa_1_pic1.jpg",
+        "images/africa_1_pic2.jpg",
+        "images/africa_1_pic3.jpg",
+        "images/africa_1_pic4.jpg",
+        "images/africa_1_pic5.jpg"
+      ]
+    }
+  ],
+  "ballet": [
+    {
+      "title": "Paris, June 1924 \u2014 Chanel and Diaghilev, Backstage at Le Train Bleu",
+      "text": "vignettes/ballet_1_text.html",
+      "pics": [
+        "images/france_2_pic1.jpg",
+        "images/france_2_pic2.jpg",
+        "images/france_2_pic3.jpg",
+        "images/france_2_pic4.jpg",
+        "images/france_2_pic5.jpg",
+        "images/france_2_pic6.jpg"
+      ]
+    }
+  ],
+  "cuba": [
+    {
+      "title": "Havana, 1928 \u2014 Eduardo Remembers When Everyone Had the Clave",
+      "text": "vignettes/cuba_1_text.html",
+      "pics": [
+        "images/cuba_1_pic1.jpg",
+        "images/cuba_1_pic2.jpg",
+        "images/cuba_1_pic3.jpg",
+        "images/cuba_1_pic4.jpg",
+        "images/cuba_1_pic5.jpg",
+        "images/cuba_1_pic6.jpg"
+      ]
+    }
+  ],
+  "china": [
+    {
+      "title": "Shanghai, 1929 \u2014 Mei-Ling Hears Everything James Misses",
+      "text": "vignettes/china_1_text.html",
+      "pics": [
+        "images/china_1_pic1.jpg",
+        "images/china_1_pic2.jpg",
+        "images/china_1_pic3.jpg",
+        "images/china_1_pic4.jpg",
+        "images/china_1_pic5.jpg",
+        "images/china_1_pic6.jpg",
+        "images/china_1_pic7.jpg",
+        "images/china_1_pic8.jpg"
+      ]
+    }
+  ],
+  "india": [
+    {
+      "title": "Bombay, 1928 \u2014 Three People Hear Gauhar Jan",
+      "text": "vignettes/india_1_text.html",
+      "pics": [
+        "images/india_1_pic1.jpg",
+        "images/india_1_pic2.jpg",
+        "images/india_1_pic3.jpg",
+        "images/india_1_pic4.jpg",
+        "images/india_1_pic5.jpg",
+        "images/india_1_pic6.jpg",
+        "images/india_1_pic7.jpg"
+      ]
+    }
+  ],
+  "indonesia": [
+    {
+      "title": "Bali, 1928 \u2014 Walter Spies Writes Home About the Night He Decided to Stay",
+      "text": "vignettes/indonesia_1_text.html",
+      "pics": [
+        "images/indonesia_1_pic1.jpg",
+        "images/indonesia_1_pic2.jpg",
+        "images/indonesia_1_pic3.jpg",
+        "images/indonesia_1_pic4.jpg",
+        "images/indonesia_1_pic5.jpg",
+        "images/indonesia_1_pic6.jpg"
       ]
     }
   ]
